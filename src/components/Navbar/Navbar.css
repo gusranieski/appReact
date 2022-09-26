@@ -1,0 +1,50 @@
+header {
+    background-color: azure;
+    box-shadow: 0 5px 10px #3396e2;
+    width: 100%;
+    position: absolute;
+}
+
+.img-logo img {
+    width: 200px;
+    height: 100px;
+    filter: drop-shadow(2px 4px 8px #585858);
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: cursive;
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 8px #585858);
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(45, 104, 192);
+    cursor: pointer;
+    box-shadow: 0 5px 10px #3396e2;
+}
+
+button:hover {
+    color:rgb(215, 96, 96);
+    transform: scale(1.1);
+}
+
+.buttons-items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
