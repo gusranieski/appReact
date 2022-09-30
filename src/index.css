@@ -22,11 +22,12 @@ code {
   header h1 {
     display: none;
   }
+
   .nav-items {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-}
+  }
 }

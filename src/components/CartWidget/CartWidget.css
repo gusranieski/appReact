@@ -12,7 +12,7 @@
 .cart-items {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    
     align-items: center;
 }
 
@@ -21,4 +21,5 @@
     font-weight: bold;
     font-size: 1.8rem;
     translate: .5rem -.5rem;
+    margin-right: 20px;
 }
