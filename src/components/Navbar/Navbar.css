@@ -1,8 +1,6 @@
 header {
     background-color: azure;
     /* box-shadow: 0 5px 10px #3396e2; */
-    width: 100%;
-    /* position: absolute; */
 }
 
 .img-logo img {
@@ -46,4 +44,12 @@ button:hover {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+}
+
+@media (max-width: 560px) {
+    .buttons-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 }
