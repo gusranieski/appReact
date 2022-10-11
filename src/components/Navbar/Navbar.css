@@ -1,7 +1,7 @@
-header {
+/* header {
     background-color: azure;
-    /* box-shadow: 0 5px 10px #3396e2; */
-}
+    box-shadow: 0 5px 10px #3396e2;
+} */
 
 .img-logo img {
     width: 200px;
@@ -9,10 +9,11 @@ header {
     filter: drop-shadow(2px 4px 8px #585858);
 }
 
-h1 {
+.titulo {
     font-size: 2rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     filter: drop-shadow(2px 4px 8px #585858);
+    color: black;
 }
 
 .nav-items {
@@ -20,9 +21,24 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    background-color: azure;
 }
 
-button {
+.button-nav {
+    padding: 5px 15px;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 5px 10px hsl(206, 81%, 75%);
+    text-decoration: none;
+    background-color: white;
+}
+
+/* button {
     padding: 5px 15px;
     margin: 10px;
     border-radius: 10px;
@@ -31,12 +47,11 @@ button {
     font-weight: bold;
     color: rgb(45, 104, 192);
     cursor: pointer;
-    box-shadow: 0 5px 10px #3396e2;
-}
+    box-shadow: 0 5px 10px hsl(206, 81%, 75%);
+} */
 
-button:hover {
-    color:rgb(215, 96, 96);
-    transform: scale(1.1);
+.button-nav:hover {
+    color: #d72c99;
 }
 
 .buttons-items {
@@ -44,6 +59,7 @@ button:hover {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+    list-style: none;
 }
 
 @media (max-width: 560px) {
@@ -51,5 +67,11 @@ button:hover {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+    }
+    .button-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        
     }
 }

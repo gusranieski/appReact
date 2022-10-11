@@ -9,3 +9,29 @@
         height: 90%;
     }
 } */
+
+.button-detail {
+    padding: 5px 15px;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 5px 10px hsl(206, 81%, 75%);
+    text-decoration: none;
+    background-color: white;
+}
+
+.button-detail:hover {
+    color: #d72c99;
+}
+
+h2 {
+    margin: 10px;
+}
+
+h3 {
+    margin: 10px;
+}

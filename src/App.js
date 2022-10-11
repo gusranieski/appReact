@@ -2,22 +2,21 @@ import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import Contador from "./components/ItemCount/ItemCount.js";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const handleOnAdd = () => {
-    console.log("Agregado al carrito!");
-  };
-
   return (
-    <div>
-      <header>
+    <div className="App">
+      <BrowserRouter>
         <Navbar />
-      </header>
-      <main className="App">
-        <ItemListContainer greeting={"Bienvenidos!!!"} />
-        <Contador onAdd={handleOnAdd} stock={10}/>
-      </main>
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/detail/:productId" element={<ItemDetailContainer />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
