@@ -21,6 +21,28 @@ p {
     text-align: justify;
 }
 
+h4 {
+    margin: 10px;
+}
+
+.button-finish {
+    padding: 5px 15px;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: whitesmoke;
+    cursor: pointer;
+    box-shadow: 0 5px 10px hsl(206, 81%, 75%);
+    background-color: #d72c99;
+}
+
+.button-finish:hover {
+    background-color: blue;
+}
+
 @media (max-width: 560px) {
     .movie-detail {
         display: flex;

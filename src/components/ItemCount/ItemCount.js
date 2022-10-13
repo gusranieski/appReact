@@ -33,7 +33,6 @@ const ItemCount = ({ onAdd, stock }) => {
       </div>
       <div>
         <button onClick={onAdd}>Agregar al carrito</button>
-        {/* {count < stock ? (<button onClick={onAdd}>Agregar al carrito</button>) : null} */}
       </div>
     </div>
   );

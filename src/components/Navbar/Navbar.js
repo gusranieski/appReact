@@ -13,7 +13,7 @@ const Navbar = () => {
       <div >
         <ul className="buttons-items">
           <li>
-          <Link to='/category/accion' className="button-nav">Acción</Link>
+          <Link to='/category/acción' className="button-nav">Acción</Link>
           </li>
           <li>
           <Link to='/category/suspenso' className="button-nav">Suspenso</Link>
