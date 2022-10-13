@@ -25,8 +25,9 @@
 }
 
 .button-nav {
+    display: flex;
     padding: 5px 15px;
-    margin: 10px;
+    margin: 5px;
     border-radius: 10px;
     border-style: none;
     font-size: 16px;

@@ -18,14 +18,22 @@
 
 p {
     padding: 10px;
+    text-align: justify;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 560px) {
     .movie-detail {
         display: flex;
-        flex-wrap: wrap;
-        /* flex-direction: column; */
+        flex-direction: column;
         width: 100%;
-        height: 90%;
+        padding: 5px;
+    }
+  }
+
+@media (min-width: 560px) {
+    .movie-detail {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
     }
 } 

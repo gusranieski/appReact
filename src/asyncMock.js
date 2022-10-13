@@ -5,7 +5,7 @@ const products = [
     img: "/images/BelowZero.jpg",
     price: 500,
     stock: 10,
-    category: "accion",
+    category: "acción",
     description: "En una fría noche cerrada de invierno, en mitad de una carretera despoblada, un furgón policial blindado es asaltado durante un traslado de presos. Alguien busca a alguien de su interior. Martín, el policía conductor del furgón, consigue atrincherarse dentro del cubículo blindado con los reclusos. Obligado a entenderse con sus enemigos naturales, Martín tratará de sobrevivir y cumplir con su deber en una larga noche de pesadilla en el que se pondrán a prueba incluso sus principios."
   },
   {
@@ -14,7 +14,7 @@ const products = [
     img: "/images/GodzillaVs.Kong.jpg",
     price: 500,
     stock: 10,
-    category: "accion",
+    category: "acción",
     description: "Godzilla y Kong, dos de las fuerzas más poderosas de un planeta habitado por aterradoras criaturas, se enfrentan en un espectacular combate que sacude los cimientos de la humanidad. Monarch se embarca en una misión de alto riesgo y pone rumbo hacia territorios inexplorados para descubrir los orígenes de estos dos titanes, en un último esfuerzo por tratar de salvar a dos bestias que parecen tener las horas contadas sobre la faz de la Tierra."
   },
   {
@@ -68,7 +68,7 @@ const products = [
     img: "/images/Breach.jpg",
     price: 500,
     stock: 10,
-    category: "accion",
+    category: "acción",
     description: "A punto de ser padre, un mecánico joven, a bordo de un arca interestelar a la Nueva Tierra, debe superar un terror cósmico malévolo que pretende utilizar la nave como arma."
   },
 ];

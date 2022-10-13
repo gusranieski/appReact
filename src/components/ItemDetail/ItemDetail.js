@@ -1,4 +1,4 @@
-import Contador from "../ItemCount/ItemCount.js";
+import ItemCount from "../ItemCount/ItemCount.js";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ name, description, img, category, price }) => {
@@ -11,9 +11,9 @@ const ItemDetail = ({ name, description, img, category, price }) => {
       <div>
         <h2>{name}</h2>
         <p>Sinopsis: {description}</p>
-        <p>Categoría: {category}</p>
-        <p>Precio: ${price}</p>
-        <Contador onAdd={handleOnAdd} stock={10} />
+        <h3>Categoría: {category}</h3>
+        <h3>Precio: ${price}</h3>
+        <ItemCount onAdd={handleOnAdd} stock={10} />
       </div>
     </div>
   );
