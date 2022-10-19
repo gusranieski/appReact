@@ -2,12 +2,21 @@ import ItemCount from "../ItemCount/ItemCount.js";
 import "./ItemDetail.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext.js";
 
-const ItemDetail = ({ name, description, img, category, price }) => {
+const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
+
+  const {addItem} = useContext(CartContext)
     
   const [goToCart, setGoToCart] = useState(false)
 
-  const handleOnAdd = () => {
+  const handleOnAdd = (count) => {
+    const productToAdd = {
+      id, name, price, count
+    }
+    addItem(productToAdd)
+    console.log('agregado:' ,productToAdd)
       setGoToCart(true)
     };
 
@@ -20,7 +29,11 @@ const ItemDetail = ({ name, description, img, category, price }) => {
         <h4>Categoría: {category}</h4>
         <h4>Precio: ${price}</h4>
         {/* aca va un ternario, con validacion y muestra el ItemCount ó un link a Cart */}
-        { goToCart ? <Link to='/cart' className="button-finish">FINALIZAR COMPRA</Link> : <ItemCount onAdd={handleOnAdd} stock={10} /> }
+         { !goToCart ? <ItemCount onAdd={handleOnAdd} stock={stock} /> :
+         <div className="buttons-detail">
+           <Link to='/cart' className="button-finish">Ir al carrito</Link>
+           <Link to='/' className="button-finish">Seguir comprando</Link> 
+         </div> }
       </div>
     </div>
   );

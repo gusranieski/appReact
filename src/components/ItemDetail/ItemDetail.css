@@ -25,6 +25,12 @@ h4 {
     margin: 10px;
 }
 
+.buttons-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .button-finish {
     padding: 5px 15px;
     margin: 10px;
@@ -36,11 +42,11 @@ h4 {
     color: whitesmoke;
     cursor: pointer;
     box-shadow: 0 5px 10px hsl(206, 81%, 75%);
-    background-color: #d72c99;
+    background-color: rgb(72, 72, 245);
 }
 
 .button-finish:hover {
-    background-color: blue;
+    background-color: #d72c99;
 }
 
 @media (max-width: 560px) {

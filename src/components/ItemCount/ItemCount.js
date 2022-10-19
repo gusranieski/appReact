@@ -1,30 +1,25 @@
 import "./ItemCount.css";
 import React, { useState } from "react";
 
-const ItemCount = ({ onAdd, stock }) => {
-  const [count, setCount] = useState(0);
-  console.log("cant agregada: " + count);
-  const [cant, setCant] = useState(stock);
-  console.log("disponible: " + cant);
-
+const ItemCount = ({ onAdd, stock, initial=0 }) => {
+  const [count, setCount] = useState(initial);
+  
   const increment = () => {
     if (count < stock) {
       setCount(count + 1);
-      setCant(cant - 1);
     }
   };
 
   const decrement = () => {
     if (count > 0) {
       setCount(count - 1);
-      setCant(cant + 1);
     }
   };
 
   return (
     <div>
       <div>
-        <h4>Stock: {cant}</h4>
+        <h4>Stock: {stock}</h4>
         <div className="counter">
           <button onClick={decrement}>-</button>
           <h3>{count}</h3>
@@ -32,7 +27,11 @@ const ItemCount = ({ onAdd, stock }) => {
         </div>
       </div>
       <div>
-        <button onClick={onAdd}>Agregar al carrito</button>
+        {
+          count > 0 
+          ? <button onClick={() => onAdd(count,)}>Agregar al carrito</button>
+          : <h3>Agregá una cantidad!</h3>
+        }
       </div>
     </div>
   );

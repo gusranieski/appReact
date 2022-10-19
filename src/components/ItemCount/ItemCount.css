@@ -7,7 +7,7 @@
 
 button {
     padding: 5px 15px;
-    margin: 10px;
+    margin-bottom: 5px;
     border-radius: 10px;
     border-style: none;
     font-size: 16px;
@@ -15,4 +15,8 @@ button {
     color: rgb(45, 104, 192);
     cursor: pointer;
     box-shadow: 0 5px 10px hsl(206, 81%, 75%);
+}
+
+button:hover {
+    background-color: aqua;
 }

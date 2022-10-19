@@ -2,6 +2,7 @@ import "./Item.css";
 import { Link } from "react-router-dom";
 
 const Item = ({ id, img, name, price }) => {
+  
   return (
     <div>
       <Link to={`/detail/${id}`} >

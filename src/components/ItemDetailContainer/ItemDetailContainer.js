@@ -1,4 +1,5 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
+import Loader from "../Loader/Loader";
 import { getProductById } from "../../asyncMock";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -21,10 +22,7 @@ const ItemDetailContainer = () => {
 
   if (loading) {
     return (
-      <div className="loader-container">
-        <h1>Loading...</h1>
-        <span className="loader"></span>
-      </div>
+      <Loader />
     );
   }
 
