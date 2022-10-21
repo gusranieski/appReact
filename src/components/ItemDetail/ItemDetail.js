@@ -4,10 +4,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext.js";
+import NotificationContext from "../../Notification/Notification.js";
 
 const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
 
   const {addItem} = useContext(CartContext)
+  const {setNotification} = useContext(NotificationContext)
     
   const [goToCart, setGoToCart] = useState(false)
 
@@ -16,6 +18,7 @@ const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
       id, name, price, count
     }
     addItem(productToAdd)
+    setNotification('success', 'Producto agregado')
     console.log('agregado:' ,productToAdd)
       setGoToCart(true)
     };
@@ -34,6 +37,9 @@ const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
            <Link to='/cart' className="button-finish">Ir al carrito</Link>
            <Link to='/' className="button-finish">Seguir comprando</Link> 
          </div> }
+         { goToCart ? true
+         : <Link to='/' className="button-finish">Volver al listado</Link> }
+         
       </div>
     </div>
   );

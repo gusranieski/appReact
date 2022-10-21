@@ -10,6 +10,9 @@
     }
 } */
 
+.movie-image:hover {
+    cursor: pointer;
+}
 
 .button-detail {
     padding: 5px 15px;
