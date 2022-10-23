@@ -8,7 +8,7 @@ import NotificationContext from "../../Notification/Notification.js";
 
 const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
 
-  const {addItem} = useContext(CartContext)
+  const {addItem, getProductQuantity} = useContext(CartContext)
   const {setNotification} = useContext(NotificationContext)
     
   const [goToCart, setGoToCart] = useState(false)
@@ -23,6 +23,8 @@ const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
       setGoToCart(true)
     };
 
+  const countAdded = getProductQuantity(id)  
+
   return (
     <div className="movie-detail">
       <img src={img} alt={name} width={230} height={345}/>
@@ -32,14 +34,13 @@ const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
         <h4>Categoría: {category}</h4>
         <h4>Precio: ${price}</h4>
         {/* aca va un ternario, con validacion y muestra el ItemCount ó un link a Cart */}
-         { !goToCart ? <ItemCount onAdd={handleOnAdd} stock={stock} /> :
+         { !goToCart ? <ItemCount onAdd={handleOnAdd} stock={stock} initial={countAdded} /> :
          <div className="buttons-detail">
            <Link to='/cart' className="button-finish">Ir al carrito</Link>
            <Link to='/' className="button-finish">Seguir comprando</Link> 
          </div> }
          { goToCart ? true
          : <Link to='/' className="button-finish">Volver al listado</Link> }
-         
       </div>
     </div>
   );

@@ -14,6 +14,7 @@ button {
     font-weight: bold;
     color: rgb(45, 104, 192);
     cursor: pointer;
+    background-color: aliceblue;
     box-shadow: 0 5px 10px hsl(206, 81%, 75%);
 }
 

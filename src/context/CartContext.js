@@ -14,21 +14,17 @@ const CartProvider = ({ children }) => {
   useEffect(() => {
     const getQuantity = () => {
         let accu = 0
-    
         cart.forEach(prod => {
             accu += prod.count
         })
-    
         return accu
     }
     const totalQty = getQuantity()
     setTotalQuantity(totalQty)
 }, [cart]);
 
-
 // función para agregar un producto al carrito(no acepta duplicados y lo setea a la nueva cantidad)
-
-  function addItem(productToAdd) {
+  function addItem(productToAdd,) {
         if (!isInCart(productToAdd.id)) {
             setCart([...cart, productToAdd]);
         } else {
@@ -42,6 +38,14 @@ const CartProvider = ({ children }) => {
             console.log("ya esta en el carrito");
         }
     }
+
+//función que retorna la cantidad del producto que encuentre
+const getProductQuantity = (id) => {
+  const product = cart.find(prod => prod.id === id)
+  if(product) {
+    return product.count
+  }
+}
 
   // función que devuelva true o false si hay un producto que esté en el carrito
   const isInCart = (id) => {
@@ -58,9 +62,14 @@ const CartProvider = ({ children }) => {
   const clearCart = () => {
     setCart([]);
   };
+
+  //función para sumar el total de la compra
+  const totalPrice = () => {
+    return cart.reduce((acc, prod) => acc + prod.count * prod.price, 0)
+  }
   
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, totalQuantity }}>
+    <CartContext.Provider value={{ addItem, getProductQuantity, removeItem, clearCart, totalPrice, totalQuantity, cart }}>
       {children}
     </CartContext.Provider>
   );
