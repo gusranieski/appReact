@@ -20,7 +20,7 @@ tr:hover {
 
 .button-cart {
     padding: 5px 15px;
-    margin: auto;
+    margin: 5px auto;
     border-radius: 10px;
     border-style: none;
     font-size: 16px;
@@ -36,3 +36,29 @@ tr:hover {
         overflow-x: scroll;
     }
 } 
+
+@media (min-width: 481px) {
+    .cart {
+        display: flex;
+        flex-direction: column;
+        width: -webkit-fill-available;
+    }
+} 
+
+@media (min-width: 768px) {
+    .cart {
+        display: flex;
+        flex-direction: column;
+        margin: 100px auto;
+        width: 80%;
+    }
+} 
+
+@media (min-width: 1024px) {
+    .cart {
+        display: flex;
+        flex-direction: column;
+        margin: 100px auto;
+        width: 50%;
+    }
+}

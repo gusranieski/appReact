@@ -1,3 +1,5 @@
+// import { addDoc, collection } from "firebase/firestore";
+
 const products = [
   {
     id: "1",
@@ -72,6 +74,11 @@ const products = [
     description: "A punto de ser padre, un mecánico joven, a bordo de un arca interestelar a la Nueva Tierra, debe superar un terror cósmico malévolo que pretende utilizar la nave como arma."
   },
 ];
+
+// products.forEach(async prod => {
+//   await addDoc(collection(db, 'products'))
+// })
+
 
 export const getProducts = () => {
     return new Promise((resolve) => {
