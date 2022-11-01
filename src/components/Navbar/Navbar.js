@@ -14,7 +14,6 @@ const Navbar = () => {
     const collectionRef = query(collection(db, 'categories'), orderBy('order'))
 
     getDocs(collectionRef).then(response => {
-      console.log(response)
       const categoriesAdapted = response.docs.map(doc => {
         const data = doc.data()
         const id = doc.id
@@ -38,18 +37,6 @@ const Navbar = () => {
               <li key={cat.id}><Link to={`/category/${cat.slug}`} className="button-nav">{cat.label}</Link></li>
             ))
           }
-          {/* <li>
-          <Link to='/category/acción' className="button-nav">Acción</Link>
-          </li>
-          <li>
-          <Link to='/category/suspenso' className="button-nav">Suspenso</Link>
-          </li>
-          <li>
-          <Link to='/category/terror' className="button-nav">Terror</Link>
-          </li>
-          <li>
-          <Link to='/category/aventura' className="button-nav">Aventura </Link>
-          </li> */}
         </ul>
       </div>
       <div>

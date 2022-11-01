@@ -3,6 +3,7 @@ import { CartContext } from "../../context/CartContext.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
+
 const ItemCart = ({ product }) => {
   const { removeItem } = useContext(CartContext);
 

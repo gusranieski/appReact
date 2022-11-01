@@ -36,7 +36,6 @@ const Cart = () => {
             {
                 cart.map(product => <ItemCart key={product.id} product={product} /> )
             }
-
             </tbody>
             </table>
             <h3>Cantidad total de productos: {totalQuantity}</h3>
@@ -44,7 +43,7 @@ const Cart = () => {
             <button className="button-cart"><Link to='/checkout'>Ir al Checkout</Link></button>
             <button className="button-cart" onClick={clearCart}>Eliminar todo</button>
         </div>
-     );
+    );
 }
- 
+
 export default Cart;

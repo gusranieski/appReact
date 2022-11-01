@@ -12,10 +12,8 @@ const Notification = ({message, severity}) => {
         backgroundColor: severity ==='success' ? 'rgb(112, 189, 112)':' rgb(232, 83, 83)'
     }
 
-    
     if (message === '') return
-        
-        
+    
     return (
         <div style={notificationStyle}>
         {message}

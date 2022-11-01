@@ -8,8 +8,6 @@ export const CartContext = createContext({
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [totalQuantity, setTotalQuantity] = useState(0)
-  console.log("carrito:", cart);
-  console.log("contador:",totalQuantity)
 
   useEffect(() => {
     const getQuantity = () => {
@@ -24,7 +22,7 @@ const CartProvider = ({ children }) => {
 }, [cart]);
 
 // función para agregar un producto al carrito(no acepta duplicados y lo setea a la nueva cantidad)
-  function addItem(productToAdd,) {
+  function addItem(productToAdd) {
         if (!isInCart(productToAdd.id)) {
             setCart([...cart, productToAdd]);
         } else {
@@ -35,6 +33,7 @@ const CartProvider = ({ children }) => {
                         : prod;
                 })
             );
+            //borrar
             console.log("ya esta en el carrito");
         }
     }

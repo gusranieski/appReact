@@ -19,7 +19,6 @@ const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
     }
     addItem(productToAdd)
     setNotification('success', 'Producto agregado')
-    console.log('agregado:' ,productToAdd)
       setGoToCart(true)
     };
 
@@ -34,13 +33,14 @@ const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
         <h4>Categoría: {category}</h4>
         <h4>Precio: ${price}</h4>
         {/* aca va un ternario, con validacion y muestra el ItemCount ó un link a Cart */}
-         { !goToCart ? <ItemCount onAdd={handleOnAdd} stock={stock} initial={countAdded} /> :
-         <div className="buttons-detail">
-           <Link to='/cart' className="button-finish">Ir al carrito</Link>
-           <Link to='/' className="button-finish">Seguir comprando</Link> 
-         </div> }
-         { goToCart ? true
-         : <Link to='/' className="button-finish">Volver al listado</Link> }
+        { stock!==0 ? <ItemCount onAdd={handleOnAdd} stock={stock} initial={countAdded} /> : <h2>Sin Stock</h2> }
+        { !goToCart ? true :
+        <div className="buttons-detail">
+          <Link to='/cart' className="button-finish">Ir al carrito</Link>
+          <Link to='/' className="button-finish">Seguir comprando</Link> 
+        </div> }
+        { goToCart ? true
+        : <Link to='/' className="button-finish">Volver al listado</Link> }
       </div>
     </div>
   );
