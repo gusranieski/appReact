@@ -1,7 +1,7 @@
 import "./Checkout.css";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext.js";
-import { collection, getDocs, query, where, documentId, writeBatch, addDoc } from "firebase/firestore";
+import { collection, getDocs, query, where, documentId, writeBatch, addDoc, Timestamp } from "firebase/firestore";
 import { db } from "../../services/firebase/index";
 import NotificationContext from "../../Notification/Notification.js";
 import { useNavigate } from "react-router-dom";
@@ -11,10 +11,10 @@ const Checkout = () => {
     const [phone, setPhone]= useState('')
     const [email, setEmail]= useState('')
     const [loading, setLoading] = useState(false)
-    const { cart, totalQuantity, clearCart } = useContext(CartContext)
+    const { cart, totalPrice, totalQuantity, clearCart } = useContext(CartContext)
     const {setNotification} = useContext(NotificationContext)
     const navigate = useNavigate()
-
+    const total = totalPrice()
     
     const createOrder = async () => {
         setLoading(true)
@@ -27,7 +27,9 @@ const Checkout = () => {
                     email: email
                 },
                 items: cart,
-                totalQuantity
+                totalQuantity,
+                total,
+                date: Timestamp.fromDate(new Date())
             }
 
             const batch = writeBatch(db)
