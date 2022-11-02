@@ -1,8 +1,3 @@
-/* header {
-    background-color: azure;
-    box-shadow: 0 5px 10px #3396e2;
-} */
-
 .img-logo img {
     width: 200px;
     height: 100px;
@@ -38,18 +33,6 @@
     text-decoration: none;
     background-color: white;
 }
-
-/* button {
-    padding: 5px 15px;
-    margin: 10px;
-    border-radius: 10px;
-    border-style: none;
-    font-size: 16px;
-    font-weight: bold;
-    color: rgb(45, 104, 192);
-    cursor: pointer;
-    box-shadow: 0 5px 10px hsl(206, 81%, 75%);
-} */
 
 .button-nav:hover {
     color: #d72c99;

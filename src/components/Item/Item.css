@@ -1,15 +1,3 @@
-
-/* .movieImage {
-    border-radius: 10px;
-}
-
-@media (max-width: 560px) {
-    .movieImage {
-        width: 100%;
-        height: 90%;
-    }
-} */
-
 .movie-image:hover {
     cursor: pointer;
 }

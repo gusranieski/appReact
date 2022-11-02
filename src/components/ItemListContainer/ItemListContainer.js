@@ -1,7 +1,6 @@
 import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
-// import { getProducts, getProductsByCategory } from "../../asyncMock";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
@@ -22,30 +21,18 @@ const ItemListContainer = () => {
 
     getDocs(collectionRef)
       .then((response) => {
-        // console.log(response)
         const productsAdapted = response.docs.map(doc => {
           const data = doc.data()
-          // console.log(data)
 
           return { id: doc.id, ...data }
         })
 
-        // console.log(productsAdapted)
         setProducts(productsAdapted)
-        // setProducts(response);
       })
       .finally(() => {
         setLoading(false);
       });
 
-    // const asyncFunction = categoryId ? getProductsByCategory : getProducts
-    // asyncFunction(categoryId)
-    //   .then((response) => {
-    //     setProducts(response);
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //   });
   }, [categoryId]);
 
   if (loading) {

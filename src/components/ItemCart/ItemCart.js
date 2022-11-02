@@ -10,7 +10,6 @@ const ItemCart = ({ product }) => {
   return (
     <>
       <tr>
-        {/* <td>{product.id}</td> */}
         <td>{product.name}</td>
         <td>{product.count}</td>
         <td>${product.price}</td>

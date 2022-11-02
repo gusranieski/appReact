@@ -24,7 +24,6 @@ const Cart = () => {
             <table>
             <thead>
                 <tr>
-                    {/* <th>ID:</th> */}
                     <th>Producto:</th>
                     <th>Cantidad:</th>
                     <th>Precio:</th>
