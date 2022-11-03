@@ -2,8 +2,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import Loader from "../Loader/Loader";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getDoc, doc } from "firebase/firestore";
-import { db } from "../../services/firebase";
+import { getProduct } from "../../services/firebase/firestore/products";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
@@ -13,13 +12,14 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
 
-    const docRef = doc(db, 'products', productId)
-
-    getDoc(docRef).then(response => {
-      const data = response.data()
-      const productAdapted = { id: response.id, ...data }
-      setProduct(productAdapted)
-    }).finally(() => {
+    getProduct(productId)
+    .then(product => {
+      setProduct(product)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+    .finally(() => {
       setLoading(false);
     });
   }, [productId]);
