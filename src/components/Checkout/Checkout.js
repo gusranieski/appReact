@@ -5,33 +5,38 @@ import { collection, getDocs, query, where, documentId, writeBatch, addDoc, Time
 import { db } from "../../services/firebase/index";
 import NotificationContext from "../../Notification/Notification.js";
 import { useNavigate } from "react-router-dom";
+import Form from "../Form/Form";
 
 const Checkout = () => {
-    const [name, setName]= useState('')
-    const [phone, setPhone]= useState('')
-    const [email, setEmail]= useState('')
+    // const [name, setName]= useState('')
+    // const [phone, setPhone]= useState('')
+    // const [email, setEmail]= useState('')
     const [loading, setLoading] = useState(false)
     const { cart, totalPrice, totalQuantity, clearCart } = useContext(CartContext)
     const {setNotification} = useContext(NotificationContext)
     const navigate = useNavigate()
     const total = totalPrice()
-    
+
+    const [personalData, setPersonalData] = useState(false)
+    const [infoBuyer, setDatosCompra] = useState({})
+
+    const completoDatos = (name, phone, email) =>{
+        setDatosCompra({name, phone, email})
+        setPersonalData(true)
+    }
+
     const createOrder = async () => {
         setLoading(true)
 
         try {
             const objectOrder = {
-                buyer: {
-                    name: name,
-                    phone: phone,
-                    email: email
-                },
+                buyer: infoBuyer,
                 items: cart,
                 totalQuantity,
                 total,
                 date: Timestamp.fromDate(new Date())
             }
-
+            console.log(objectOrder)
             const batch = writeBatch(db)
 
             const outOfStock = []
@@ -69,7 +74,7 @@ const Checkout = () => {
                 
                 setTimeout(() => {
                     navigate('/')
-                }, 2000)
+                }, 3000)
                 
                 setNotification('success', `Revisa tu correo para realizar el pago. Has reservado ${totalQuantity} producto/s. Código: ${orderAdded.id}`)
             } else {
@@ -88,25 +93,13 @@ const Checkout = () => {
 
     return ( 
         <div className="contenedorContacto">
-        <form >
             <h1>Checkout</h1>
-            <div>
-                <label htmlFor="userName">Nombre:</label>
-                <input type="text" name="userName" id="userName" value={name} onInput={(e) => setName(e.target.value)} required></input>
-            </div>
-            <div>
-                <label htmlFor="userPhone">Teléfono:</label>
-                <input type="number" name="userPhone" id="userPhone" value={phone} onInput={(e) => setPhone(e.target.value)} required></input>
-            </div>
-            <div>
-                <label htmlFor="userMail">Mail:</label>
-                <input type="email" name="userMail" id="userMail" value={email} onInput={(e) => setEmail(e.target.value)} required></input>
-            </div>
-            <div className="buttons-order">
-            <button onClick={createOrder}>Generar orden</button>
-            <button>Cancelar orden</button>
-            </div>
-        </form>
+            <Form completoDatos={completoDatos}/>
+            {
+                personalData
+                ?<button onClick={createOrder}>Generar orden</button>
+                : ""
+            }
         </div>
     );
 }
