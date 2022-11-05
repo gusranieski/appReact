@@ -21,7 +21,6 @@ const CartProvider = ({ children }) => {
     setTotalQuantity(totalQty)
 }, [cart]);
 
-// función para agregar un producto al carrito(no acepta duplicados y lo setea a la nueva cantidad)
   function addItem(productToAdd) {
         if (!isInCart(productToAdd.id)) {
             setCart([...cart, productToAdd]);
@@ -33,12 +32,9 @@ const CartProvider = ({ children }) => {
                         : prod;
                 })
             );
-            //borrar
-            console.log("ya esta en el carrito");
         }
     }
 
-//función que retorna la cantidad del producto que encuentre
 const getProductQuantity = (id) => {
   const product = cart.find(prod => prod.id === id)
   if(product) {
@@ -46,23 +42,19 @@ const getProductQuantity = (id) => {
   }
 }
 
-  // función que devuelva true o false si hay un producto que esté en el carrito
   const isInCart = (id) => {
     return cart.some((prod) => prod.id === id);
   };
 
-  // función para remover un producto del carrito
   const removeItem = (id) => {
     const productLess = cart.filter((prod) => prod.id !== id);
     setCart(productLess);
   };
 
-  // función para limpiar el carrito
   const clearCart = () => {
     setCart([]);
   };
 
-  //función para sumar el total de la compra
   const totalPrice = () => {
     return cart.reduce((acc, prod) => acc + prod.count * prod.price, 0)
   }

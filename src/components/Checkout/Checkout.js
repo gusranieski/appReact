@@ -8,9 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Form from "../Form/Form";
 
 const Checkout = () => {
-    // const [name, setName]= useState('')
-    // const [phone, setPhone]= useState('')
-    // const [email, setEmail]= useState('')
+
     const [loading, setLoading] = useState(false)
     const { cart, totalPrice, totalQuantity, clearCart } = useContext(CartContext)
     const {setNotification} = useContext(NotificationContext)
@@ -36,7 +34,7 @@ const Checkout = () => {
                 total,
                 date: Timestamp.fromDate(new Date())
             }
-            console.log(objectOrder)
+            
             const batch = writeBatch(db)
 
             const outOfStock = []
@@ -74,7 +72,7 @@ const Checkout = () => {
                 
                 setTimeout(() => {
                     navigate('/')
-                }, 3000)
+                }, 4000)
                 
                 setNotification('success', `Revisa tu correo para realizar el pago. Has reservado ${totalQuantity} producto/s. Código: ${orderAdded.id}`)
             } else {

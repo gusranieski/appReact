@@ -12,12 +12,15 @@ const Form = ({completoDatos}) => {
     const [name, setName]= useState('')
     const [phone, setPhone]= useState('')
     const [email, setEmail]= useState('')
+    const [emailConfirm, setEmailConfirm] = useState('')
     const {setNotification} = useContext(NotificationContext)
     
     const eValidate = (e) => {
         e.preventDefault()
         if (!name || !phone || !email) {
             setNotification('error', 'Completá tus datos!')
+        } else if (email !== emailConfirm) {
+            setNotification('error', 'Mail mal ingresado!')
         } else {
             completoDatos(name, phone, email)
             setNotification('success', 'Datos confirmados!')
@@ -38,6 +41,10 @@ const Form = ({completoDatos}) => {
             <div>
                 <label htmlFor="userMail">Mail:</label>
                 <input type="email" name="userMail" id="userMail" value={email} onChange={(e) => setEmail(e.target.value)} required></input>
+            </div>
+            <div>
+                <label htmlFor="userMail">Confirmar Mail:</label>
+                <input type="email" name="userMail" id="userMail" value={emailConfirm} onChange={(e) => setEmailConfirm(e.target.value)} required></input>
             </div>
             <div className="buttons-order">
             {

@@ -1,0 +1,31 @@
+.footer {
+    margin-bottom: 10px;
+}
+
+.copyright {
+    color:cadetblue;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    
+    color: aquamarine;
+    text-decoration: none;
+}
+
+.social {
+    display: inline;
+    flex-direction: row;
+}
+
+.social a {
+    color: white;
+    font-size: 2rem;
+    margin: 10px;
+    
+}
+
+.social a:hover {
+    color: aquamarine;
+}
