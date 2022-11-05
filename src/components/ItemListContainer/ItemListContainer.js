@@ -1,35 +1,26 @@
 import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../services/firebase/firestore/products";
+import { useAsync } from "../../hooks/useAsync";
 
 const ItemListContainer = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const {categoryId} = useParams()
 
-  useEffect(() => {
-    setLoading(true)
+  const getProductsFromFirestore = () => getProducts(categoryId)
 
-    getProducts(categoryId)
-    .then(products => {
-      setProducts(products)
-    })
-    .catch(error => {
-      console.log(error)
-    })
-    .finally(() => {
-      setLoading(false);
-    });
-  }, [categoryId]);
+  const { data: products, error, loading } = useAsync(getProductsFromFirestore, [categoryId])
 
   if (loading) {
     return (
       <Loader />
     );
+  }
+
+  if(error) {
+    return <h1>Se generó un error...</h1>
   }
 
   return (
