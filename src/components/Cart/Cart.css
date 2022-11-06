@@ -19,7 +19,7 @@ tr:hover {
 }
 
 .button-cart {
-    padding: 5px 15px;
+    padding: 10px 15px;
     margin: 5px auto;
     border-radius: 10px;
     border-style: none;
@@ -29,6 +29,11 @@ tr:hover {
     cursor: pointer;
     background-color: aliceblue;
     box-shadow: 0 5px 10px hsl(206deg 81% 75%);
+}
+
+.button-cart a {
+    text-decoration: none;
+    color: #1b1b8d;
 }
 
 @media (max-width: 480px) {

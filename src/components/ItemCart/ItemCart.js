@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-
+import "./ItemCart.css";
 
 const ItemCart = ({ product }) => {
   const { removeItem } = useContext(CartContext);
@@ -15,9 +15,12 @@ const ItemCart = ({ product }) => {
         <td>${product.price}</td>
         <td>${product.count * product.price}</td>
         <td>
-          <button onClick={() => removeItem(product.id)}>
-            <FontAwesomeIcon icon={faTrashCan} />
-          </button>
+          <FontAwesomeIcon
+            onClick={() => removeItem(product.id)}
+            icon={faTrashCan}
+            size="xl"
+            className="trash"
+          />
         </td>
       </tr>
     </>

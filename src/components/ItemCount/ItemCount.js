@@ -23,9 +23,9 @@ const ItemCount = ({ onAdd, stock, initial=1 }) => {
       <div>
         <h4>Stock: {stock}</h4>
         <div className="counter">
-          <button onClick={decrement}><FontAwesomeIcon icon={faCircleMinus}/></button>
+          <FontAwesomeIcon onClick={decrement} icon={faCircleMinus} size="xl" className="highlight"/>
           <h3>{count}</h3>
-          <button onClick={increment}><FontAwesomeIcon icon={faCirclePlus}/></button>
+          <FontAwesomeIcon onClick={increment} icon={faCirclePlus} size="xl" className="highlight"/>
         </div>
       </div>
       <div>

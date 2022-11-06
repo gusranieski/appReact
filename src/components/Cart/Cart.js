@@ -39,7 +39,7 @@ const Cart = () => {
             </table>
             <h3>Cantidad total de productos: {totalQuantity}</h3>
             <h1 className="title-products">Total: ${totalPrice()}</h1>
-            <button className="button-cart"><Link to='/checkout'>Ir al Checkout</Link></button>
+            <button className="button-cart"><Link to='/checkout'>Realizar Compra</Link></button>
             <button className="button-cart" onClick={clearCart}>Eliminar todo</button>
         </div>
     );

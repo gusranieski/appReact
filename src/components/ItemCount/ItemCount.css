@@ -5,8 +5,17 @@
     align-items: center;
 }
 
+.highlight {
+    color: rgb(45, 104, 192);
+    cursor: pointer;
+}
+
+.highlight:hover {
+    color: aqua;
+}
+
 button {
-    padding: 5px 15px;
+    padding: 10px 15px;
     margin: 5px 0px 10px 0px;
     border-radius: 10px;
     border-style: none;
