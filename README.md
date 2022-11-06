@@ -38,3 +38,12 @@ En el archivo `.env.example` estan las variables que deben ir para poder llenarl
 ## Deployment Link
 https://backyardcinema.vercel.app/
 
+## Google Drive Link
+
+**gif app:**
+https://drive.google.com/drive/u/0/folders/1kql3sTDlCwuPPXxZ__NK1LWyp3hZu3vH
+
+**gif firebase:**
+https://drive.google.com/drive/u/0/folders/1_x5fBo1L_cJikI7Ay6lvDUgZLGY5Ha-x
+
+
