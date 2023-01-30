@@ -1,12 +1,16 @@
+.detail-container {
+    margin-top: 100px;
+}
+
 .movie-detail {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: #d72c99;
+    color: #5a5a5a;
     text-align: center;
     padding: 20px 50px;
-    margin: 50px auto;
+    margin: 10px auto;
     width: 54%;
     background-color: azure;
     border-radius: 10px;
@@ -32,8 +36,10 @@ h4 {
 }
 
 .button-finish {
-    padding: 5px 15px;
+    display: inline-block;
+    padding: 10px 15px;
     margin: 10px;
+    width: 200px;
     border-radius: 10px;
     border-style: none;
     font-size: 16px;
@@ -64,7 +70,7 @@ h4 {
         flex-direction: column;
         width: 70%;
     }
-} 
+}
 
 @media (min-width: 768px) {
     .movie-detail {
@@ -72,7 +78,7 @@ h4 {
         flex-direction: row;
         width: 90%;
     }
-} 
+}
 
 @media (min-width: 1024px) {
     .movie-detail {

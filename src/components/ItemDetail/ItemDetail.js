@@ -25,6 +25,7 @@ const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
   const countAdded = getProductQuantity(id)  
 
   return (
+    <div className="detail-container">
     <div className="movie-detail">
       <img src={img} alt={name} width={230} height={345}/>
       <div>
@@ -42,6 +43,7 @@ const ItemDetail = ({ id, name, description, img, category, price, stock }) => {
         : <Link to='/' className="button-finish">Volver al listado</Link> }
       </div>
     </div>
+  </div>
   );
 };
 

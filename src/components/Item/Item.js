@@ -13,8 +13,8 @@ const Item = ({ id, img, name, price, stock }) => {
         ? <h2 className="msj-stock">Sin Stock</h2>
         :""
       }
+      <div className="card-detail">
       <h2>{name}</h2>
-      <div >
       <h3>Precio: ${price}</h3>
       <Link to={`/detail/${id}`} className="button-detail" >Ver detalle</Link>
       </div>

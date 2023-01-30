@@ -1,0 +1,30 @@
+.cover-container {
+    height: 100vh;
+    width: 100%;
+    object-fit: contain;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.video {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+.cover-container>h1 {
+    color: #c37da0;
+    font-size: 3.5rem;
+}
+
+.cover-container>p {
+    margin-top: 8px;
+    color: white;
+    font-size: 32px;
+}
