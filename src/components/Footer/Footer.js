@@ -14,7 +14,7 @@ const Footer = () => {
         </a>
       </div>
       <div className="copyright">
-        © 2022 Copyright-
+        © 2023 Copyright-
         <a href="https://www.linkedin.com/in/gustavo-ranieski/" target="blank">
           Gustavo Rañieski
         </a>

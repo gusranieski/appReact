@@ -17,6 +17,7 @@
 button {
     padding: 10px 15px;
     margin: 5px 0px 10px 0px;
+    width: 200px;
     border-radius: 10px;
     border-style: none;
     font-size: 16px;

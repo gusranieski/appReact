@@ -86,7 +86,7 @@ const Checkout = () => {
     }
 
     if(loading) {
-        return <h1>Se esta procesando su pedido...</h1>
+        return <h1 className="successfully">Se esta procesando su pedido...</h1>
     }
 
     return ( 

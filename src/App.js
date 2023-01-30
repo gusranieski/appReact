@@ -18,6 +18,7 @@ function App() {
         <CartProvider>
           <BrowserRouter>
             <Navbar />
+            <div className="content">
             <Routes>
               <Route path="/" element={<ItemListContainer />} />
               <Route path="/detail/:productId" element={<ItemDetailContainer />} />
@@ -26,6 +27,7 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
             </Routes>
+            </div>
             <Footer />
           </BrowserRouter>
         </CartProvider>

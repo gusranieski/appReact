@@ -12,12 +12,11 @@
 .cart-items {
     display: flex;
     flex-direction: row;
-    
     align-items: center;
 }
 
 .cart-span {
-    color: red;
+    color: white;
     font-weight: bold;
     font-size: 1.8rem;
     translate: .5rem -.5rem;

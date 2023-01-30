@@ -19,8 +19,14 @@ const Form = ({completoDatos}) => {
         e.preventDefault()
         if (!name || !phone || !email) {
             setNotification('error', 'Completá tus datos!')
+        } else if (!/^[a-zA-Z]+$/.test(name)) {
+            setNotification('error', 'El nombre sólo puede contener letras!')
+        } else if (phone.length < 8) {
+            setNotification('error', 'Número de teléfono demasiado corto!')
+        } else if (phone.length > 11) {
+            setNotification('error', 'Número de teléfono demasiado largo!')
         } else if (email !== emailConfirm) {
-            setNotification('error', 'Mail mal ingresado!')
+            setNotification('error', 'Ingresa bien tu email!')
         } else {
             completoDatos(name, phone, email)
             setNotification('success', 'Datos confirmados!')
@@ -47,11 +53,7 @@ const Form = ({completoDatos}) => {
                 <input type="email" name="userMail" id="userMail" value={emailConfirm} onChange={(e) => setEmailConfirm(e.target.value)} required></input>
             </div>
             <div className="buttons-order">
-            {
-                eValidate
-                ?<button onClick={eValidate}>Confirmar datos personales</button>
-                :null
-            }
+            <button onClick={eValidate}>Confirmar datos personales</button>
             </div>
         </form>
     );

@@ -1,9 +1,9 @@
-import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../services/firebase/firestore/products";
 import { useAsync } from "../../hooks/useAsync";
+import Cover from "../Cover/Cover";
 
 const ItemListContainer = () => {
 
@@ -25,9 +25,7 @@ const ItemListContainer = () => {
 
   return (
     <div className="item-list-container">
-      <div>
-        <h1 className="div-title">PELICULAS</h1>
-      </div>
+      <Cover/>
       <ItemList products={products}/>
     </div>
   );

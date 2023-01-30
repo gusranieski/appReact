@@ -8,6 +8,7 @@ import { db } from "../../services/firebase";
 
 const Navbar = () => {
   const [categories, setCategories] = useState([])
+  const [ menu, setMenu] = useState( false )
 
   useEffect(() =>{
 
@@ -24,12 +25,16 @@ const Navbar = () => {
     })
   }, [])
 
+  const toggleMenu = () => {
+    setMenu( !menu )
+  }
+
   return (
     <nav className="nav-items">
       <Link to='/' className="img-logo">
         <img src={logo} alt="logo" />
       </Link>
-      <h1 className="titulo">BACKYARD CINEMA</h1>
+      <div  className={ `buttons-cart ${ menu ? 'isActive' : '' }` }>
       <div >
         <ul className="buttons-items">
           {
@@ -42,6 +47,14 @@ const Navbar = () => {
       <div>
         <CartWidget />
       </div>
+      </div>
+
+          <button onClick={ toggleMenu } className="menu-toggle">
+          <svg className="burger-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+          </button>
+
     </nav>
   );
 };
